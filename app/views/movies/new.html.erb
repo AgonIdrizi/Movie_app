@@ -1,0 +1,19 @@
+new.html.erb
+
+<%= form_for @movie do |f| %>
+  <%= f.label :movie_name %>
+  <%= f.text_field :name %><br>
+
+   <%= f.fields_for :directors do |ff| %>
+     <%= ff.label :Director_name %>
+     <%= ff.text_field :name %>
+   <% end %><br>
+
+   <%= f.fields_for :actors do |ff| %>
+     <%= ff.label :actor_name %>
+     <%= ff.text_field :name %>
+   <% end %><br>
+
+   <%= f.submit 'Create Movie' %>
+
+<% end %>
