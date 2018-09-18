@@ -4,6 +4,9 @@ new.html.erb
   <%= f.label :movie_name %>
   <%= f.text_field :name %><br>
 
+  <%= f.label :movie_description %>
+  <%= f.text_area :description %><br>
+
    <%= f.fields_for :directors do |ff| %>
      <%= ff.label :Director_name %>
      <%= ff.text_field :name %>
@@ -13,6 +16,8 @@ new.html.erb
      <%= ff.label :actor_name %>
      <%= ff.text_field :name %>
    <% end %><br>
+
+   <%= f.file_field :image  %>
 
    <%= f.submit 'Create Movie' %>
 
