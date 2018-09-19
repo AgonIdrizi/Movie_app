@@ -1,12 +1,12 @@
-index
+<h1>All Movies</h1>
 <div class="index-container">
   <% @movies.each do |movie| %>
   <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src=<%= "#{url_for(movie.image)}" %> alt="Card image cap">
+   
     <div class="card-body">
-      <h5 class="card-title"><%= movie.name %></h5>
-      <p class="card-text"><%= movie.description %></p>
-     <a href="#" class="btn btn-primary">Go somewhere</a>
+      <p class="card-title"><strong>Name: </strong><%= movie.name %></p>
+      <p class="card-text"><strong>Description: </strong><%= movie.description %></p>
+     <a href="#" class="btn btn-primary">Go somewhere</a><br><hr>
     </div>
   </div>
   <% end %>
