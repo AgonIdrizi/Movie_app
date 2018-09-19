@@ -1,24 +1,23 @@
-new.html.erb
 
+<h1>Add a new Movie</h1>
 <%= form_for @movie do |f| %>
-  <%= f.label :movie_name %>
+  <p><%= f.label :movie_name %></p>
   <%= f.text_field :name %><br>
 
-  <%= f.label :movie_description %>
+  <p><%= f.label :movie_description %></p>
   <%= f.text_area :description %><br>
 
    <%= f.fields_for :directors do |ff| %>
-     <%= ff.label :Director_name %>
+   <p><%= ff.label :Director_name %></p>
      <%= ff.text_field :name %>
    <% end %><br>
-
    <%= f.fields_for :actors do |ff| %>
-     <%= ff.label :actor_name %>
-     <%= ff.text_field :name %>
+     <p class='actor-name'><%= ff.label :actor_name %><p>
+     <p class='actor-field'><%= ff.text_field :name %></p>
    <% end %><br>
 
-   <%= f.file_field :image  %>
+   <%= f.file_field :image  %><br>
 
-   <%= f.submit 'Create Movie' %>
+   <%= f.submit 'Create Movie', class: "btn btn-primary" %>
 
 <% end %>

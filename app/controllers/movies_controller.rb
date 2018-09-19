@@ -15,9 +15,8 @@ class MoviesController < ApplicationController
 
 	def create
 		@movie = Movie.new(movie_params)
-
 		if @movie.save
-			redirect_to 'index'
+			redirect_to root_path
 		else
 			render 'new'
 		end
@@ -27,6 +26,6 @@ class MoviesController < ApplicationController
 	private
 
 	def movie_params
-		params.require(:movie).permit(:name, :description,:image, :directors_attributes => [:name],:actors_attributes => [:name])
+		params.require(:movie).permit(:name, :description,	:image, :directors_attributes => [:name],:actors_attributes => [:name])
 	end
 end

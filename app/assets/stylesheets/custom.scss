@@ -1,3 +1,26 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import 'font-awesome';
+
+body {
+    padding-left: 40px;
+}
+
+p {
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+
+.actor-name {
+    margin-right: 80%;
+}
+
+.actor-field {
+    margin-right: 100%;
+    margin-left: 0;
+}
+
+textarea {
+    resize: none;
+    min-height: 100px;
+}
