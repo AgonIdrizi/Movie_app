@@ -1,7 +1,8 @@
 class Movie < ApplicationRecord
+  validate :picture_size
   has_many :movie_directors , dependent: :destroy
   has_many :directors, through: :movie_directors
-
+  mount_uploader :picture, PictureUploader
   has_many :movie_actors , dependent: :destroy
   has_many :actors, through: :movie_actors
 
@@ -15,4 +16,12 @@ class Movie < ApplicationRecord
 
   accepts_nested_attributes_for :directors
   accepts_nested_attributes_for :actors
+
+  private
+
+  def picture_size
+    if picture.size > 5.megabytes
+      errors.add(:picture, "Should be less than 5MD")
+    end
+  end
 end
