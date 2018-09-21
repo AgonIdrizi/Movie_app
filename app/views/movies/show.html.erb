@@ -2,6 +2,9 @@
   <div class="card-body">
     <h5 class="card-title"><%= @movie.name %></h5>
     <p class="card-text"><%= @movie.description %></p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <%  if user_signed_in? %>
+      <%= render partial: 'users/watch_form',locals: {movie:  @movie} %>
+      <%= render partial: 'users/watchlist_form',locals: {movie:  @movie} %>
+    <% end %>
   </div>
 </div>

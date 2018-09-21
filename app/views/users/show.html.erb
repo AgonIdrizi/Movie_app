@@ -1,0 +1,33 @@
+
+<%= @user.name %>
+
+
+<div class="index-container">
+<h2 class="Watched_title">Watched Movies</h2>
+  <% @movies_watch.each do |movie_watch| %>
+  <div class="card" style="width: 18rem;">
+   
+    <div class="card-body">
+      <p class="card-title"><strong>Name: </strong><%= movie_watch.name %></p>
+      <p class="card-text"><strong>Description: </strong><%= movie_watch.description.truncate(70) %></p>
+      <%= image_tag movie_watch.picture.url if movie_watch.picture? %>
+      <% #render 'users/watchlist_form', object: movie  if user_signed_in? %>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<div class="index-container">
+<h2 class="Watchlist_title">In Watchlist</h2>
+  <% @movies_watchlist.each do |movie_watchlist| %>
+  <div class="card" style="width: 18rem;">
+   
+    <div class="card-body">
+      <p class="card-title"><strong>Name: </strong><%= movie_watchlist.name %></p>
+      <p class="card-text"><strong>Description: </strong><%= movie_watchlist.description.truncate(70) %></p>
+      <%= image_tag movie_watchlist.picture.url if movie_watchlist.picture? %>
+      <% #render 'users/watchlist_form', object: movie  if user_signed_in? %>
+    </div>
+  </div>
+  <% end %>
+</div>

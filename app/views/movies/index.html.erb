@@ -5,9 +5,10 @@
    
     <div class="card-body">
       <p class="card-title"><strong>Name: </strong><%= movie.name %></p>
-      <p class="card-text"><strong>Description: </strong><%= movie.description %></p>
+      <p class="card-text"><strong>Description: </strong><%= movie.description.truncate(70) %></p>
       <%= image_tag movie.picture.url if movie.picture? %>
-     <a href="#" class="btn btn-primary">Go somewhere</a><br><hr>
+      <% #render 'users/watchlist_form', object: movie  if user_signed_in? %>
+      <% #render 'users/watchlist_form', object: movie  if user_signed_in? %>
     </div>
   </div>
   <% end %>

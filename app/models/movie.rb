@@ -12,12 +12,18 @@ class Movie < ApplicationRecord
   has_many :watchlist, foreign_key: 'movie_id',class_name: 'Watchlist' , dependent: :destroy
   has_many :users_watchlisted, through: :watchlist,source: :user
 
-  has_one_attached :image
+  #has_one_attached :image
 
-  accepts_nested_attributes_for :directors
-  accepts_nested_attributes_for :actors
+  accepts_nested_attributes_for :directors, allow_destroy: true
+  accepts_nested_attributes_for :actors, allow_destroy: true
+
+ def self.watched?(params)
+
+  current_user.watch.find_by(movie_id: params[:id]).nil?
+  end
 
   private
+
 
   def picture_size
     if picture.size > 5.megabytes

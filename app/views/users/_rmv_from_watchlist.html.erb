@@ -1,0 +1,3 @@
+<%= form_for(current_user.watchlist.find_by(movie_id: @movie.id), html: {method: :delete}, remote: true) do |f|%>
+  <%= f.submit "Remove from watchlist", class: 'btn' %>
+<% end %>
