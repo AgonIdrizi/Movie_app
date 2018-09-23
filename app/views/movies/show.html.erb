@@ -1,10 +1,19 @@
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title"><%= @movie.name %></h5>
-    <p class="card-text"><%= @movie.description %></p>
+<div class="container-show-movie">
+  <div class="container-card">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body center">
+        <%= image_tag(@movie.picture.url) if @movie.picture? %>
+      </div>
+    </div>
+    <div class="ajax-buttons">
     <%  if user_signed_in? %>
       <%= render partial: 'users/watch_form',locals: {movie:  @movie} %>
       <%= render partial: 'users/watchlist_form',locals: {movie:  @movie} %>
     <% end %>
+   </div>
+  </div>
+  <div class="container-description">
+    <p class="card-title"><strong>Name: </strong><%= @movie.name %></p>
+    <p class="card-text"><strong>Description: </strong><%= @movie.description %></p>
   </div>
 </div>
