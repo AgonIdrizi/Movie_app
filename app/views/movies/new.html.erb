@@ -1,26 +1,27 @@
-
+<div class= "container">
 <h1>Add a new Movie</h1>
 <%= form_for @movie do |f| %>
   <p><%= f.label :movie_name %></p>
-  <%= f.text_field :name %><br>
+  <p class="field"><%= f.text_field :name %></p><br>
 
   <p><%= f.label :movie_description %></p>
-  <%= f.text_area :description %><br>
+  <p class="field"><%= f.text_area :description %></p><br>
 
    <%= f.fields_for :directors do |ff| %>
    <p><%= ff.label :Director_name %></p>
-     <%= ff.text_field :name %>
+     <p class="field"><%= ff.text_field :name %></p>
    <% end %><br>
    <%= f.fields_for :actors do |ff| %>
-     <p class='actor-name'><%= ff.label :actor_name %><p>
-     <p class='actor-field'><%= ff.text_field :name %></p>
+     <p><%= ff.label :actor_name %><p>
+     <p class="field"><%= ff.text_field :name %></p>
    <% end %><br>
 
-   <%= f.file_field :picture, accept: 'image/jpeg,image/png'  %><br>
+   <%= f.file_field :picture, accept: 'image/jpeg,image/png', class: "picture" %><br>
 
-   <%= f.submit 'Create Movie', class: "btn btn-primary" %>
+   <%= f.submit 'Create Movie', class: "btn btn-primary create-button" %>
 
 <% end %>
+</div>
 
 <script type="text/javascript">
   $('#movie_picture').bind('change', function() {
