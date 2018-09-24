@@ -2,7 +2,7 @@ class MoviesController < ApplicationController
 	before_action :authenticate_user! , only: [:new,:create,:edit,:destroy]
 	before_action :check_if_movie_exists , only: [:show,:edit,:update]
 	def index
-		@movies = Movie.all
+		@movies = Movie.all.page(params[:page]).per(12)
 
 	end
 

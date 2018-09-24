@@ -13,7 +13,7 @@ class Movie < ApplicationRecord
   has_many :users_watchlisted, through: :watchlist,source: :user
 
   #has_one_attached :image
-
+  
   accepts_nested_attributes_for :directors, allow_destroy: true
   accepts_nested_attributes_for :actors, allow_destroy: true
 
