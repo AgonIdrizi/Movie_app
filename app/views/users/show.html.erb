@@ -1,13 +1,21 @@
 
-<%= @user.name %>
+<h4><%= @user.name %>'s Profile</h3>
 
 
-<div class="index-container">
+<div class="show-user-page-container">
 <h2 class="Watched_title"><%= link_to 'Watched Movies', watched_user_path(current_user) %></h2>
-  
+ <div class="show-list-thumbnail">
+  <% @movies_watch.each do |movie| %>
+    <%= link_to image_tag(movie.picture_url(:thumb)), movie if movie.picture.present? %>
+    <% end %>
+ </div>
 </div>
 
-<div class="index-container">
+<div class="show-user-page-container">
 <h2 class="Watchlist_title"><%= link_to 'Watchlist', watchlist_user_path(current_user.id) %></h2>
-  
+ <div class="show-list-thumbnail">
+  <% @movies_watchlist.each do |movie| %>
+    <%= link_to image_tag(movie.picture_url(:thumb)), movie if movie.picture.present? %>
+    <% end %>
+ </div>
 </div>
