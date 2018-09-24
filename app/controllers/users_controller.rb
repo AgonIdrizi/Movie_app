@@ -8,11 +8,11 @@ class UsersController < ApplicationController
 
   def watched
   	@user = User.find_by(id: params[:id])
-  	@movies_watch = @user.movies_watch
+  	@movies_watch = @user.movies_watch.page(params[:page]).per(12)
   end
   def watchlist
   	@user = User.find_by(id: params[:id])
-  	@movies_watchlist = @user.movies_watchlist
+  	@movies_watchlist = @user.movies_watchlist.page(params[:page]).per(12)
   end
 
 end

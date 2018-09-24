@@ -1,14 +1,18 @@
-<div class="index-container">
-<h2 class="Watchlist_title">In Watchlist</h2>
-  <% @movies_watchlist.each do |movie_watchlist| %>
-  <div class="card" style="width: 18rem;">
+<h2 class="watched_title ">Watchlist</h2>
+ <div class="index-container ">
+  <% @movies_watchlist.each do |movie| %>
+  <div class="card" >
    
-    <div class="card-body">
-      <p class="card-title"><strong>Name: </strong><%= movie_watchlist.name %></p>
-      <p class="card-text"><strong>Description: </strong><%= movie_watchlist.description.truncate(70) %></p>
-      <%= image_tag movie_watchlist.picture.url if movie_watchlist.picture? %>
+    <div class="card-body center">
+      <%= link_to image_tag(movie.picture.url), movie if movie.picture? %>
+      <% #render 'users/watchlist_form', object: movie  if user_signed_in? %>
       <% #render 'users/watchlist_form', object: movie  if user_signed_in? %>
     </div>
   </div>
+  
   <% end %>
+
+</div>
+<div class="paginate">
+  <%= paginate @movies_watchlist %>
 </div>

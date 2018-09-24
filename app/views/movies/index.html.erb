@@ -8,5 +8,10 @@
       <% #render 'users/watchlist_form', object: movie  if user_signed_in? %>
     </div>
   </div>
+  
   <% end %>
+
+</div>
+<div class="paginate">
+  <%= paginate @movies %>
 </div>
