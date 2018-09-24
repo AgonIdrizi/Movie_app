@@ -7,7 +7,7 @@
     </div>
     <div class="ajax-buttons">
     <%  if user_signed_in? %>
-      <%= render partial: 'users/watch_form',locals: {movie:  @movie} %>
+      <%= render partial: 'users/watch_form',locals: {movie:  @movie} %><br>
       <%= render partial: 'users/watchlist_form',locals: {movie:  @movie} %>
     <% end %>
    </div>
