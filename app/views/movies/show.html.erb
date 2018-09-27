@@ -17,3 +17,15 @@
     <p class="card-text"><strong>Description: </strong><%= @movie.description %></p>
   </div>
 </div>
+
+ <div class="row ratings">
+  <div class="small-2 large-2 columns">
+    <%= imdb_style_rating_for @movie, current_user%>
+  </div>
+  <br>
+  <div class="small-2 large-4 columns">
+    <% if current_user %>
+      Movies: <%= rating_for @movie, "movie", disable_after_rate: false, enable_half: true, path: 'star_icons', cancel_place: 'right', cancel_hint: 'Cancel this vote!', imdb_avg: true %>
+    <% end %>
+  </div>
+</div>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post '/rate' => 'rater#create', :as => 'rate'
   get 'static_pages/help'
   root 'movies#index'
   get 'watchlists/create'
