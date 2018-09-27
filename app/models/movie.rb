@@ -1,4 +1,5 @@
 class Movie < ApplicationRecord
+  ratyrate_rateable 'movie'
   validate :picture_size
   has_many :movie_directors , dependent: :destroy
   has_many :directors, through: :movie_directors
@@ -21,6 +22,7 @@ class Movie < ApplicationRecord
 
   current_user.watch.find_by(movie_id: params[:id]).nil?
   end
+  
 
   private
 
