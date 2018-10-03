@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
   post '/watches' , to: "watches#create" 
   delete 'watches', to: "watches#destroy"
-  resources :watches ,only: [:create, :destroy]
-  resources :watchlists ,only: [:create, :destroy]
+  resources :watches, only: [:create, :destroy]
+  resources :watchlists, only: [:create, :destroy]
+  resources :reviews, only: [:create, :destroy]
 end

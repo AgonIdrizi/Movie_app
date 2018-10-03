@@ -13,6 +13,7 @@ class Movie < ApplicationRecord
   has_many :watchlist, foreign_key: 'movie_id',class_name: 'Watchlist' , dependent: :destroy
   has_many :users_watchlisted, through: :watchlist,source: :user
 
+  has_many :reviews
   #has_one_attached :image
   
   accepts_nested_attributes_for :directors, allow_destroy: true

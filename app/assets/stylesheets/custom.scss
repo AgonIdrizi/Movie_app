@@ -94,6 +94,19 @@ ul, .navbar-right{
 	width: 300px;
 	margin-top: 5px;
 }
+.container-under-description{
+  display: grid;
+  grid-template-columns: repeat(2, 0.3fr);
+  margin-bottom:10px;
+  padding-bottom:3px;
+  
+}
+
+.review-show{
+  display:grid;
+  margin-left:350px;
+  width:500px;
+}
 
 .watch-button {
     padding-left: 25px;
