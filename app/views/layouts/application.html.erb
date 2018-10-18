@@ -10,9 +10,7 @@
   </head>
 
   <body>
-  <div class= 'navbar-container'>
     <%= render 'layouts/header' %>
-  </div>
   <div class="container-errors">
       <% flash.each do |message_type, message| %>
         <%= content_tag(:div, message, class: 'alert alert-#{message_type}') %>
