@@ -1,5 +1,4 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container-navbar myNavbar">
+  <div class="topnav" id="myTopnav">
     <%= link_to "Movie App", root_path, id: "logo" %>
     <%= link_to "Home", root_path %>
     <%= link_to "Help", help_path %>
@@ -9,12 +8,10 @@
           <button class="dropbtn">Account
             <i class="fa fa-caret-down"></i>
                </button>
-            </a>
             <div class="dropdown-content">
               <%= link_to "Profile", current_user %>
               <%= link_to "Watched Movies", watched_user_path(current_user.id) %>
               <%= link_to "In watchlist movies", watchlist_user_path(current_user.id) %>
-              <a class="divider"></a>
               <%= link_to "Log out", destroy_user_session_path %>
             </div>
           </div>
@@ -22,6 +19,5 @@
           <%= link_to "Log in", new_user_session_path %>
           <%= link_to "Sign up", new_user_registration_path %>
         <% end %>
-        <a href="javascript:void(0);" class="icon" onclick="myDropdownFunction()">&#9776;</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
   </div>
-</header>

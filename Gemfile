@@ -9,6 +9,7 @@ gem 'ratyrate'
 gem 'devise'
 gem 'carrierwave',             '1.2.2'
 gem 'mini_magick',             '4.7.0'
+gem 'bootstrap'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
@@ -53,7 +54,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'bootstrap-sass',   '~> 3.3.7'
+  gem 'bootstrap-sass',   '3.3.7'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
