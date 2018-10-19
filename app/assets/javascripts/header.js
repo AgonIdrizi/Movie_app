@@ -1,8 +1,8 @@
-function myDropdownFunction() {
-    var x = document.getElementsByClassName("myNavbar");
-    if (x.className === "myNavbar") {
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
         x.className += " responsive";
     } else {
-        x.className = "myNavbar";
+        x.className = "topnav";
     }
 } 
