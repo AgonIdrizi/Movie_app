@@ -1,11 +1,12 @@
 <div class="index-container">
   <% @movies.each do |movie| %>
   <div class="card" >
-   
-    <div class="card-body center">
-      <%= link_to image_tag(movie.picture.url), movie if movie.picture? %>
+    <%= link_to image_tag(movie.picture.url), movie if movie.picture? %>
+      
+    <div class="card-body">
       <% #render 'users/watchlist_form', object: movie  if user_signed_in? %>
       <% #render 'users/watchlist_form', object: movie  if user_signed_in? %>
+      <%= movie.name %>
     </div>
   </div>
   
