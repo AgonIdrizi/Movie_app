@@ -1,3 +1,4 @@
+<div class="movie-show">
 <div class="container-show-movie">
   <div class="container-card">
     <div>
@@ -41,11 +42,11 @@
 <div class='review-show'>
 <% @reviews.each do |review|%>
   <div class="card-show">
-    <div class="card-header">
-      <p>Created by: <%= review.user.email %></p>
-    </div>
     <div class="card-body">
       <blockquote class="blockquote mb-0">
+          <div class="card-header">
+            <p>Commented by: <%= review.user.email %></p>
+          </div>
         <p><%= review.body %></p>
         <footer class="blockquote-footer"><%= review.created_at %> </footer>
       </blockquote>
@@ -53,4 +54,5 @@
     </div>
   </div>
 <% end %>
+</div>
 </div>

@@ -68,10 +68,18 @@ ul, .navbar-right{
 	width: 300px;
 }
 
-.review-show{
-  display:grid;
-  margin-left: 455px;
-  width: 475px;
+.card-body {
+    width: 470px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.movie-show {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
 }
 
 .watch-button {
