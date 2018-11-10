@@ -1,3 +1,51 @@
+.index-container {
+    display: grid;
+}
+
+@media only screen and (max-width: 1283px) {
+    .index-container {
+        display: grid;
+        grid-template-rows: 400px 400px 400px;
+        grid-template-columns: 300px 300px 300px;
+    }
+}
+
+@media only screen and (max-width: 1107px) {
+    .index-container {
+        display: grid;
+        grid-template-rows: 450px 450px;
+        grid-template-columns: 350px 350px; 
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    .index-container {
+        display: grid;
+        grid-template-rows: 400px 400px;
+        grid-template-columns: 300px 300px; 
+    }
+}
+
+@media only screen and (max-width: 790px) {
+    .index-container {
+        display: grid;
+        grid-template-rows: 350px 350px;
+        grid-template-columns: 250px 250px; 
+    }
+}
+
+@media only screen and (max-width: 735px) {
+    .index-container {
+        display: grid;
+        grid-template-rows: 500px;
+        grid-template-columns: 400px;
+        align-items: center;
+        justify-content: flex-start;
+        margin-left: 100px;
+    }
+}
+
+/* Movie index page styling */
 .card {
     padding: 0px;
     display: flex;
@@ -34,7 +82,7 @@
     transition-duration: 0.7s;
 }
 
-.card-body {
+.card-header {
     margin: 0px;
     padding: 5px;
     min-height: 100px;
@@ -43,5 +91,53 @@
     justify-content: center;
     font-size: 25px;
     text-align: center;
+    border: none;
+    background-color: white;
 }
 
+/* Movie show page styling */
+
+.container-show-movie {
+    display: flex;
+    justify-content: center;
+}
+
+.ratings {
+    margin-bottom: 10%;
+    margin-left: 15%;
+    margin-top: 10px;
+}
+
+.container-card {
+    margin-bottom: 0;
+}
+
+.center img {
+    width: 175px;
+}
+
+.review-form {
+    width: 475px;
+    height: 126px;
+}
+
+.review-section {
+    display: flex;
+    justify-content: center;  
+}
+
+.review-form input {
+    padding-left: 25px;
+    padding-right: 30px;
+    background-color: #637EC5;
+    height: 38px !important;
+    color: white;
+    border: 1px solid #637EC5;
+}
+
+.card-body {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}

@@ -1,9 +1,5 @@
 @import "bootstrap";
 
-body {
-    padding-left: 40px;
-}
-
 p {
     margin-top: 10px;
     margin-left: 50px;
@@ -64,38 +60,24 @@ ul, .navbar-right{
 
 /* show page */
 .ajax-buttons{
-	margin-left: 30px;
-}
-
-.container-show-movie{
-	display: grid;
-    grid-template-columns: repeat(2, 0.1fr);
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: 0;
+    margin-top: 20px;
 }
 
 .container-description{
 	width: 300px;
-	margin-top: 5px;
-}
-
-.container-under-description{
-  display: grid;
-  grid-template-columns: repeat(2, 0.3fr);
-  margin-bottom:10px;
-  padding-bottom:3px;
-  
 }
 
 .review-show{
   display:grid;
-  margin-left:350px;
-  width:500px;
+  margin-left: 455px;
+  width: 475px;
 }
 
 .watch-button {
     padding-left: 25px;
     padding-right: 30px;
+    background-color: #637EC5;
 } 
 
 /* New Movies styling */
@@ -175,7 +157,4 @@ input, textarea, select, .uneditable-input {
     padding-top: 10px;
 }
 
-.ratings {
-    margin-left: 80px;
-}
 

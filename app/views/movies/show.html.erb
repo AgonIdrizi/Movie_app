@@ -1,8 +1,9 @@
 <div class="container-show-movie">
   <div class="container-card">
-    <div class="card" style="width: 18rem;">
-      <div class="card-body center">
+    <div>
+      <div class="center">
         <%= image_tag(@movie.picture.url) if @movie.picture? %>
+        <br />
       </div>
     </div>
     <div class="ajax-buttons">
@@ -11,45 +12,44 @@
       <%= render partial: 'users/watchlist_form',locals: {movie:  @movie} %>
     <% end %>
    </div>
+    <div class="row ratings">
+    <div class="small-2 large-2 columns">
+    </div>
+    <br>
+    <div class="small-2 large-4 columns">
+      <% if current_user %>
+        Rate this Movie: <%= rating_for @movie, "movie", disable_after_rate: false, enable_half: true, path: 'star_icons', cancel_place: 'right', cancel_hint: 'Cancel this vote!', imdb_avg: true %>
+      <% end %>
+    </div>
+  </div>
   </div>
   <div class="container-description">
     <p class="card-title"><strong>Name: </strong><%= @movie.name %></p>
     <p class="card-text"><strong>Description: </strong><%= @movie.description %></p>
   </div>
 </div>
-<div class='container-under-description'>
-   <div class="row ratings">
-    <div class="small-2 large-2 columns">
-      <%= imdb_style_rating_for @movie, current_user%>
-    </div>
-    <br>
-    <div class="small-2 large-4 columns">
-      <% if current_user %>
-        Movies: <%= rating_for @movie, "movie", disable_after_rate: false, enable_half: true, path: 'star_icons', cancel_place: 'right', cancel_hint: 'Cancel this vote!', imdb_avg: true %>
-      <% end %>
-    </div>
-  </div>
-
+<div class="review-section">
   <div class='review-form'>
     <%= form_for(Review.new, url: reviews_path) do |f| %>
       <%= f.hidden_field :movie_id, value: @movie.id %>
-      <%= f.label :body %>
       <%= f.text_area :body %>
-      <%= f.submit  %>
+      <%= f.submit %>
     <% end %>
   </div>
 </div>
+<br />
 <div class='review-show'>
 <% @reviews.each do |review|%>
   <div class="card-show">
     <div class="card-header">
-      <p>Created by: <%= review.user.name%></p>
+      <p>Created by: <%= review.user.email %></p>
     </div>
     <div class="card-body">
       <blockquote class="blockquote mb-0">
         <p><%= review.body %></p>
-        <footer class="blockquote-footer"><%= review.created_at%> </footer>
+        <footer class="blockquote-footer"><%= review.created_at %> </footer>
       </blockquote>
+        <br />
     </div>
   </div>
 <% end %>
