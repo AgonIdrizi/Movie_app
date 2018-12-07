@@ -165,4 +165,69 @@ input, textarea, select, .uneditable-input {
     padding-top: 10px;
 }
 
+/* Users Profile show page */
 
+.user-profile-title {
+  text-align: center;
+}
+
+.profile-options {
+    display: flex;
+    justify-content: center;
+}
+
+.watchlist {
+    margin: 5px;
+    padding: 15px 25px;
+	background-color: #637EC5; 
+    background-image: linear-gradient(#637EC5, rgb(168, 191, 248));
+    text-decoration: none;
+	color: #fff;
+	font-size: 25px;
+	font-family: sans-serif;
+    font-weight: 100;
+    a {
+        color: white;
+        text-decoration: none;
+    }
+}
+
+.watchlist::after{
+	content: '';
+	position: absolute;
+	top: 23%;
+	left: 53.6%;
+	width: calc(160px - 4px);
+	height: 40px;
+	background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2));
+}
+
+.watched {
+    margin: 5px;
+    padding: 15px 25px;
+	background-color: #637EC5; 
+    background-image: linear-gradient(#637EC5, rgb(168, 191, 248));
+    text-decoration: none;
+	color: #fff;
+	font-size: 25px;
+	font-family: sans-serif;
+    font-weight: 100;
+    a {
+        color: white;
+        text-decoration: none;
+    }
+}
+
+.watched::after{
+	content: '';
+	position: absolute;
+	top: 23%;
+	left: 35.5%;
+	width: calc(248px - 4px);
+	height: 40px;
+	background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2));
+}
+
+.watched:hover, .watchlist:hover {
+	background: linear-gradient(rgb(90, 133, 243),rgb(135, 163, 235));
+}
