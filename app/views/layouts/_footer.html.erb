@@ -5,45 +5,32 @@
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<h5>Quick links</h5>
 					<ul class="list-unstyled quick-links">
-						<li><a><i class="fa fa-angle-double-right"></i>Home</a></li>
-						<li><a><i class="fa fa-angle-double-right"></i>Help</a></li>
-						<li><a><i class="fa fa-angle-double-right"></i>Movies</a></li>
-						<li><a><i class="fa fa-angle-double-right"></i>Add new Movie</a></li>
+						<li><a href="/help"><i class="fa fa-angle-double-right"></i>Help</a></li>
+						<li><a href="/movies"><i class="fa fa-angle-double-right"></i>Movies</a></li>
+						<li><a href="movies/new"><i class="fa fa-angle-double-right"></i>Add new Movie</a></li>
 					</ul>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<h5>Quick links</h5>
 					<ul class="list-unstyled quick-links">
-						<li><a><i class="fa fa-angle-double-right"></i>Home</a></li>
-						<li><a><i class="fa fa-angle-double-right"></i>Help</a></li>
-						<li><a><i class="fa fa-angle-double-right"></i>Movies</a></li>
-						<li><a><i class="fa fa-angle-double-right"></i>Add new Movie</a></li>
+						<li><i class="fa fa-angle-double-right"><%= link_to " Profile", current_user %></i></li>
+						<li><i class="fa fa-angle-double-right"><%= link_to " Watched Movies", watched_user_path(current_user.id) %></i></li>
+						<li><i class="fa fa-angle-double-right"><%= link_to " In Watchlist Movies", watchlist_user_path(current_user.id)%></i></li>
 					</ul>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<h5>Quick links</h5>
 					<ul class="list-unstyled quick-links">
-						<li><a><i class="fa fa-angle-double-right"></i>Home</a></li>
-						<li><a><i class="fa fa-angle-double-right"></i>Help</a></li>
-						<li><a><i class="fa fa-angle-double-right"></i>Movies</a></li>
-						<li><a><i class="fa fa-angle-double-right"></i>Add new Movie</a></li>
+						<li><i class="fa fa-angle-double-right"><%= link_to " Log out", destroy_user_session_path %></i></li>
+						<li><i class="fa fa-angle-double-right"><%= link_to " Users", "/users" %></i></li>
+						<li><a href="https://github.com/AgonIdrizi/Movie_app/"><i class="fa fa-angle-double-right"></i>Github Repo</a></li>
 					</ul>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
-					<ul class="list-unstyled list-inline social text-center">
-						<li class="list-inline-item"><a><i class="fa fa-facebook"></i></a></li>
-						<li class="list-inline-item"><a><i class="fa fa-twitter"></i></a></li>
-						<li class="list-inline-item"><a><i class="fa fa-instagram"></i></a></li>
-						<li class="list-inline-item"><a><i class="fa fa-google-plus"></i></a></li>
-					</ul>
-				</div>
-				</hr>
-			</div>	
+			
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
-					<p>Blah blah blah blah blah</p>
+					<p>Cpoyright @ 2018 MovieHolics</p>
 				</div>
 				</hr>
 			</div>	
